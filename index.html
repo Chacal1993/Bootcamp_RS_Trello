@@ -12,7 +12,7 @@
     <!-- Encabezado -->
     <div class="header_title">
         <div>
-            <button>Home</button>
+            <a href="https://trello.com/">Home</a>
         </div>
         <div>
             <img class="logo" src="https://a.trellocdn.com/prgb/dist/images/header-logo-2x.01ef898811a879595cea.png"
@@ -33,78 +33,74 @@
     <!-- Cotenedor de tareas -->
     <div class="container_trello">
         <div class="container_cards">
-            <div class="card">
+            <div class="card" id="td">
                 <h3>To Do</h3>
                 <div class="sub_card">
-                    <div class="card card_task">
+                    <div class="card card_task" onclick="showModal(this)">
                         <h4>hola</h4>
                     </div>
-                    <div class="card card_task">
-                        <h4>hello</h4>
-                    </div>
-                    <div class="card card_task">
-                        <h4>hello</h4>
-                    </div>
                 </div>
-                <div>
-                    <button class="btnSecondary">+ Agregar otra tarjeta</button>
+                <div class="container_btnSecondary">
+                    <button class="btnSecondary" onclick="showModalNewCard(this)">+ Agregar otra tarea</button>
                 </div>
             </div>
-            <div class="card">
-                <h3>To Do</h3>
+            <div class="card" id="wip">
+                <h3>Work In Progress</h3>
                 <div class="sub_card">
-                    <div class="card card_task">
+                    <div class="card card_task" onclick="showModal(this)">
                         <h4>hola</h4>
                     </div>
-                    <div class="card card_task">
-                        <h4>hello</h4>
-                    </div>
-                    <div class="card card_task">
-                        <h4>hello</h4>
-                    </div>
                 </div>
-                <div>
-                    <button class="btnSecondary">+ Agregar otra tarjeta</button>
+                <div class="container_btnSecondary">
+                    <button class="btnSecondary" onclick="showModalNewCard(this)">+ Agregar otra tarea</button>
                 </div>
             </div>
-            <div class="card">
-                <h3>To Do</h3>
+            <div class="card" id="dn">
+                <h3>Done</h3>
                 <div class="sub_card">
-                    <div class="card card_task">
+                    <div class="card card_task" onclick="showModal(this)">
                         <h4>hola</h4>
                     </div>
-                    <div class="card card_task">
-                        <h4>hello</h4>
-                    </div>
-                    <div class="card card_task">
-                        <h4>hello</h4>
-                    </div>
                 </div>
-                <div>
-                    <button class="btnSecondary">+ Agregar otra tarjeta</button>
-                </div>
-            </div>
-            <div class="card">
-                <h3>To Do</h3>
-                <div class="sub_card">
-                    <div class="card card_task">
-                        <h4>hola</h4>
-                    </div>
-                    <div class="card card_task">
-                        <h4>hello</h4>
-                    </div>
-                    <div class="card card_task">
-                        <h4>hello</h4>
-                    </div>
-                </div>
-                <div>
-                    <button class="btnSecondary">+ Agregar otra tarjeta</button>
+                <div class="container_btnSecondary">
+                    <button class="btnSecondary" onclick="showModalNewCard(this)">+ Agregar otra tarea</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Modal de tarea -->
+    <div id="modal">
+        <div class="modal_content card">
+            <div class="">
+                <span onclick="cerrarModal()" class="close">&times;</span>
+                <h2 class="title_active" id="title_mod">Título</h2>
+                <input class="inactive editable" id="input_title" placeholder="Escriba un título" type="text" disabled
+                    value="Título">
+                <div>
+                    <button onclick="moverTarea(this.id)" id="toDo">To do</button>
+                    <button onclick="moverTarea(this.id)" id="toWork">work</button>
+                    <button onclick="moverTarea(this.id)" id="done">done</button>
+                </div>
+            </div>
+            <div>
+                <p>Descripción: <span><button onclick="editarTarea()" class="title_active">Editar</button></span></p>
+                <textarea class="editable" name="textArea" id="" cols="30" rows="10"
+                    placeholder="Escriba una breve descripción" disabled>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum</textarea>
+            </div>
+            <div class="inactive">
+                <button onclick="cerrarModal()">Cerrar</button>
+                <button onclick="guardarDatos()" id="btn_guardar">Guardar</button>
+            </div>
+        </div>
+    </div>
 
-
+    <script src="./assets/js/logica.js"></script>
 </body>
 
 </html>

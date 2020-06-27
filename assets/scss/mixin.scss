@@ -1,0 +1,9 @@
+@mixin cambiarColor($color) {
+    background-color: $color;
+}
+
+@mixin borderColor($border, $padding, $color) {
+    background-color: $color;
+    border: $border;
+    padding: $padding;
+}

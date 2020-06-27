@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/scss/style.css" type="text/css">
+    <title>Trello</title>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <div class="header_title">
+        <div>
+            <a href="https://trello.com/">Home</a>
+        </div>
+        <div>
+            <img class="logo" src="https://a.trellocdn.com/prgb/dist/images/header-logo-2x.01ef898811a879595cea.png"
+                alt="">
+        </div>
+        <div class="menu_derecho">
+            <button>+</button>
+            <button>Info</button>
+            <div class="imagen">
+                <img class="my_picture" src="./assets/img/Carnet.png" alt="Alejandro">
+            </div>
+        </div>
+    </div>
+    <!-- Menu de opciones -->
+    <div class="menu_trello">
+        <h3>Dashboard GeeksHub</h3>
+    </div>
+    <!-- Cotenedor de tareas -->
+    <div class="container_trello">
+        <div class="container_cards">
+            <div class="card" id="td">
+                <h3>To Do</h3>
+                <div class="sub_card">
+                    <div class="card card_task" onclick="showModal(this)">
+                        <h4>hola</h4>
+                    </div>
+                </div>
+                <div class="container_btnSecondary">
+                    <button class="btnSecondary" onclick="showModalNewCard(this)">+ Agregar otra tarea</button>
+                </div>
+            </div>
+            <div class="card" id="wip">
+                <h3>Work In Progress</h3>
+                <div class="sub_card">
+                    <div class="card card_task" onclick="showModal(this)">
+                        <h4>hola</h4>
+                    </div>
+                </div>
+                <div class="container_btnSecondary">
+                    <button class="btnSecondary" onclick="showModalNewCard(this)">+ Agregar otra tarea</button>
+                </div>
+            </div>
+            <div class="card" id="dn">
+                <h3>Done</h3>
+                <div class="sub_card">
+                    <div class="card card_task" onclick="showModal(this)">
+                        <h4>hola</h4>
+                    </div>
+                </div>
+                <div class="container_btnSecondary">
+                    <button class="btnSecondary" onclick="showModalNewCard(this)">+ Agregar otra tarea</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de tarea -->
+    <div id="modal">
+        <div class="modal_content card">
+            <div class="">
+                <span onclick="cerrarModal()" class="close">&times;</span>
+                <h2 class="title_active" id="title_mod">Título</h2>
+                <input class="inactive editable" id="input_title" placeholder="Escriba un título" type="text" disabled
+                    value="Título">
+                <div>
+                    <button onclick="moverTarea(this.id)" id="toDo">To do</button>
+                    <button onclick="moverTarea(this.id)" id="toWork">work</button>
+                    <button onclick="moverTarea(this.id)" id="done">done</button>
+                </div>
+            </div>
+            <div>
+                <p>Descripción: <span><button onclick="editarTarea()" class="title_active">Editar</button></span></p>
+                <textarea class="editable" name="textArea" id="" cols="30" rows="10"
+                    placeholder="Escriba una breve descripción" disabled>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum</textarea>
+            </div>
+            <div class="inactive">
+                <button onclick="cerrarModal()">Cerrar</button>
+                <button onclick="guardarDatos()" id="btn_guardar">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/logica.js"></script>
+</body>
+
+</html>
